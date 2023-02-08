@@ -75,7 +75,7 @@ header .logo {
     width: 100%;
   }
 }
-header ul.main-nav {
+header .main-nav {
   display: flex;
 }
 @media (max-width: 767px) {
@@ -83,7 +83,12 @@ header ul.main-nav {
     margin: 0 auto;
   }
 }
-header .container ul > li > a {
+header .container .main-nav > li:hover .mega-menu {
+  opacity: 100%;
+  z-index: 1;
+  top: calc(100% + 1px);
+}
+header .container .main-nav > li > a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,13 +104,13 @@ header .container ul > li > a {
   -o-transition: var(--main-transition);
 }
 @media (max-width: 767px) {
-  header .container ul > li > a {
+  header .container .main-nav > li > a {
     padding: 0 10px;
     font-size: 13px;
     height: var(--header-height-small);
   }
 }
-header .container ul > li > a::before {
+header .container .main-nav > li > a::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -120,13 +125,94 @@ header .container ul > li > a::before {
   -o-transition: var(--main-transition);
 }
 
-header .container ul > li > a:hover {
+header .container .main-nav > li > a:hover {
   background-color: #fafafa;
   color: var(--main-color);
 }
-header .container ul > li > a:hover::before {
+header .container .main-nav > li > a:hover::before {
   left: 0;
 }
+/* Start Mega Menu */
+header .mega-menu {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: calc(100% + 50px);
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  gap: 40px;
+  border-bottom: 3px solid var(--main-color);
+  z-index: -1;
+  opacity: 0;
+  transition: top var(--main-transition), opacity var(--main-transition);
+  -webkit-transition: top var(--main-transition), opacity var(--main-transition);
+  -moz-transition: top var(--main-transition), opacity var(--main-transition);
+  -ms-transition: top var(--main-transition), opacity var(--main-transition);
+  -o-transition: top var(--main-transition), opacity var(--main-transition);
+}
+@media (max-width: 767px) {
+  header .mega-menu {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+.mega-menu .image img {
+  max-width: 100%;
+}
+@media (max-width: 991px) {
+  .mega-menu .image img {
+    display: none;
+  }
+}
+.mega-menu .links {
+  min-width: 250px;
+}
+.mega-menu .links li {
+  position: relative;
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .mega-menu .links:first-of-type li:last-child {
+    border-bottom: 1px solid #e9e6e6;
+  }
+}
+.mega-menu .links li:not(:last-child) {
+  border-bottom: 1px solid #e9e6e6;
+}
+.mega-menu .links li::before {
+  content: "";
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  background-color: #ececec;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.mega-menu .links li:hover::before {
+  width: 100%;
+}
+.mega-menu .links li a {
+  display: block;
+  color: var(--main-color);
+  font-size: 1em;
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .mega-menu .links li a {
+    font-size: 0.8em;
+  }
+}
+.mega-menu .links li a i {
+  margin-right: 20px;
+}
+/* End Mega Menu */
 /* End Header  */
 /* Start Landing */
 .landing {
@@ -153,6 +239,7 @@ header .container ul > li > a:hover::before {
   flex: wrap;
   align-items: center;
   padding-bottom: 120px;
+  position: relative;
 }
 @media (max-width: 991px) {
   .landing .container {
@@ -162,6 +249,8 @@ header .container ul > li > a:hover::before {
 }
 .landing .image img {
   position: absolute;
+  right: 0;
+  top: 0;
   width: 600px;
   max-width: 100%;
   animation: ups-and-downs 5s linear infinite;

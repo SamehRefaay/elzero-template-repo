@@ -675,7 +675,7 @@ header .mega-menu {
 }
 .testimonials .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 }
 .testimonials .box {
@@ -714,8 +714,104 @@ header .mega-menu {
   color: #777;
   line-height: 1.5;
 }
-
 /* End TESTIMONIALS */
+/* Start Team Members */
+.team-members {
+  padding-top: var(--section-padding-top);
+  padding-top: var(--section-padding-bottom);
+}
+.team-members .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.team-members .box {
+  position: relative;
+  padding: 60px 60px 0 0;
+}
+.team-members .box::before,
+.team-members .box::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.team-members .box::before {
+  width: calc(100% - 60px);
+  z-index: -2;
+}
+.team-members .box::after {
+  width: 0px;
+  background-color: #e4e4e4;
+  z-index: -1;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.team-members .box:hover::after {
+  width: calc(100% - 60px);
+}
+.team-members .box .data {
+  display: flex;
+}
+.team-members .box .data img {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.team-members .box:hover .data img {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+.team-members .box .data .social {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.team-members .box .data .social a {
+  display: block;
+  width: 60px;
+  text-align: center;
+}
+.team-members .box .data .social a i {
+  color: #777;
+  font-size: 1.2em;
+}
+.team-members .box .data .social a:hover i {
+  color: var(--main-color);
+}
+.team-members .box .info {
+  padding-left: 80px;
+}
+.team-members .box .info h3 {
+  margin-top: 20px;
+  font-size: 1.3em;
+  color: var(--main-color);
+}
+.team-members .box:hover .info h3 {
+  color: #777;
+}
+.team-members .box .info p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+/* End Team Members */
+
 /* Start Animation */
 @keyframes ups-and-downs {
   0%,

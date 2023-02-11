@@ -463,7 +463,7 @@ header .mega-menu {
   gap: 30px;
 }
 .gallery .card {
-  padding: 20px;
+  padding: 15px;
   background-color: white;
   position: relative;
   box-shadow: 0 12px 20px 0 rgba(0 0 0 / 13%), 0px 2px 4px 0px rgba(0 0 0 / 12%);
@@ -507,6 +507,165 @@ header .mega-menu {
   -o-transform: rotate(5deg) scale(1.1);
 }
 /* End Gallery */
+/* Start Feature */
+.features {
+  padding-top: var(--section-padding-top);
+  padding-bottom: var(--section-padding-bottom);
+  position: relative;
+  background-color: white;
+}
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+.features .box {
+  border: 1px solid #cccccc;
+  text-align: center;
+  background-color: white;
+}
+.features .box .image-box {
+  position: relative;
+  transition: var(--main-transition);
+  overflow: hidden;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.features .box .image-box::before {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  right: 0px;
+  border-style: solid;
+  border-width: 0 0 165px 350px;
+  border-color: transparent transparent white transparent;
+  transition: var(--main-transition);
+  z-index: 2;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.features .quality .image-box::after,
+.features .time .image-box::after,
+.features .passion .image-box::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.features .quality .image-box::after {
+  background-color: rgb(244 64 54/50%);
+}
+.features .time .image-box::after {
+  background-color: rgb(0 150 136/50%);
+}
+.features .passion .image-box::after {
+  background-color: rgb(3 169 244/50%);
+}
+.features .box:hover .image-box::before {
+  left: 0px;
+  border-width: 0px 350px 165px 0px;
+}
+.features .box .image-box img {
+  max-width: 100%;
+}
+.features .box h2 {
+  width: fit-content;
+  margin: 30px auto;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+}
+.features .box h2::before {
+  position: absolute;
+  content: "";
+  left: 15px;
+  bottom: -15px;
+  width: calc(100% - 30px);
+  height: 5px;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.features .quality h2::before {
+  border: 1px solid rgb(244 64 54);
+  background: linear-gradient(to right, rgb(244 64 54) 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.features .time h2::before {
+  border: 1px solid rgb(0 150 136);
+  background: linear-gradient(to right, rgb(0 150 136) 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.features .passion h2::before {
+  border: 1px solid rgb(3 169 244);
+  background: linear-gradient(to right, rgb(3 169 244) 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.features .box:hover h2::before {
+  background-position: left bottom;
+}
+.features .box p {
+  line-height: 1.5;
+  padding: 0 15px;
+  font-size: 1.2em;
+  color: #777;
+}
+.features .box a {
+  display: block;
+  margin: 30px auto 20px;
+  width: fit-content;
+  padding: 10px 30px;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: 3px solid red;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.features .quality a {
+  color: rgb(244 64 54);
+  border-color: rgb(244 64 54);
+  background: linear-gradient(to right, rgb(244 64 54) 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.features .time a {
+  color: rgb(0 150 136);
+  border-color: rgb(0 150 136);
+  background: linear-gradient(to right, rgb(0 150 136) 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.features .passion a {
+  color: rgb(3 169 244);
+  border-color: rgb(3 169 244);
+  background: linear-gradient(to right, rgb(3 169 244) 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.features .box:hover a {
+  background-position: left bottom;
+  color: white;
+}
+/* End Feature */
 /* Start Animation */
 @keyframes ups-and-downs {
   0%,

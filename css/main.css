@@ -905,8 +905,24 @@ header .mega-menu {
   color: var(--main-color);
   text-align: right;
 }
-
 /* End Services */
+/* Start Our Skills */
+.our-skills {
+  padding-top: var(--section-padding-top);
+  padding-bottom: var(--section-padding-bottom);
+}
+.our-skills .container {
+  display: flex;
+}
+.our-skills .skills {
+  display: flex;
+  justify-content: center;
+}
+.our-skills .skills .skill h3 {
+  display: flex;
+  justify-content: space-between;
+}
+/* End Our Skills */
 /* Start Animation */
 @keyframes ups-and-downs {
   0%,

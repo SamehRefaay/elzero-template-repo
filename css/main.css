@@ -932,8 +932,14 @@ header .mega-menu {
 }
 .our-skills .skills .skill span {
   font-size: 0.8em;
-  border: 1px solid #777;
   padding: 3px 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: var(--main-color);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 .our-skills .skills .skill .progress {
   position: relative;
@@ -948,6 +954,95 @@ header .mega-menu {
   background-color: var(--main-color);
 }
 /* End Our Skills */
+/* Start Work Steps */
+.work-steps {
+  padding-top: var(--section-padding-top);
+  padding-bottom: var(--section-padding-bottom);
+  background-color: var(--section-background);
+}
+.work-steps .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+@media (max-width: 991px) {
+  .work-steps .container {
+    flex-direction: column;
+  }
+}
+.work-steps .image {
+  max-width: 100%;
+}
+.work-steps .cards-holder {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.work-steps .cards-holder .card {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: #f6f5f5;
+  border: 2px solid white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+@media (max-width: 767px) {
+  .work-steps .cards-holder .card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.work-steps .cards-holder .card::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  background-color: #ededed;
+  width: 0;
+  height: 0;
+  border-radius: 10px;
+  z-index: -1;
+  transition: var(--main-transition);
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.work-steps .cards-holder .card:hover::before {
+  width: 100%;
+  height: 100%;
+}
+.work-steps .cards-holder .card img {
+  width: 64px;
+}
+.work-steps .cards-holder .card h3 {
+  font-size: 1.5em;
+}
+.work-steps .cards-holder .card p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* End Work Steps */
 /* Start Animation */
 @keyframes ups-and-downs {
   0%,
